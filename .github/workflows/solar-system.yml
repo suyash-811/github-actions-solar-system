@@ -53,7 +53,7 @@ jobs:
         run: npm install
   
       - name: Run Code-coverage
-        run: npm run code-coverage
+        run: npm run coverage
         continue-on-error: true
 
       - name: Push coverage artifact
