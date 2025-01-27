@@ -10,18 +10,13 @@ on:
 env:
   MONGO_URI: "mongodb+srv://supercluster.d83jj.mongodb.net/superData"
   MONGO_USERNAME: 'superuser'
-  MONGO_PASSWORD: '{{ secrets.MONGO_PASSWORD }}'
+  MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 
 jobs:
     unit-testing:
         name: Unit Testing
         runs-on: ubuntu-latest
         steps:
-        - name: Print ENVs
-          run: |
-            echo $MONGO_URI
-            echo $MONGO_USERNAME
-            echo $MONGO_PASSWORD
         - name: Checkout Repository
           uses: actions/checkout@v4
 
